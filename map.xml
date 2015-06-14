@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map proto="1.3.3">
+	<name>Despidiendo</name>
+	<version>1.0.0</version>
+	<objective>敵チームより多く色を塗る / Paint with a color more than an enemy team.</objective>
+	<authors>
+		<author>rn01_24</author>
+	</authors>
+	<teams>
+		<team color="yellow" max="5">Yellow Team</team>
+		<team color="gold" max="5">Orange Team</team>
+		<team color="green" max="5">Green Team</team>
+		<team color="dark_purple" max="5">Purple Team</team>
+	</teams>
+	<spawns lookat="0,3,0">
+		<spawn team="yellow">
+			<cuboid min="1,8,-34" max="-1,9,-34"/>
+		</spawn>
+		<spawn team="gold">
+			<cuboid min="-34,8,-1" max="-34,9,1"/>
+		</spawn>
+		<spawn team="green">
+			<cuboid min="-1,8,34" max="1,9,34"/>
+		</spawn>
+		<spawn team="dark_purple">
+			<cuboid min="34,8,1" max="34,9,-1"/>
+		</spawn>
+		<default yaw="90">
+			<block>0,2,0</block>
+		</default>
+	</spawns>
+	<kits>
+		<kit name="default"/>
+		<kit name="jump">
+			<potion duration="2" amplifier="5">jump</potion>
+			<potion duration="2" amplifier="5">speed</potion>
+		</kit>
+	</kits>
+	<regions>
+		<rectangle min="2,31" max="-2,31" name="green"/>
+		<rectangle min="-31,2" max="-31,-2" name="orange"/>
+		<rectangle min="-2,-31" max="2,-31" name="yellow"/>
+		<rectangle min="31,-2" max="31,2" name="purple"/>
+		<apply kit="jump">
+			<region name="green"/>
+			<region name="orange"/>
+			<region name="yellow"/>
+			<region name="purple"/>
+		</apply>
+	</regions>
+	<disabledamage>
+		<damage>fall</damage>
+	</disabledamage>
+	<maxbuildheight>0</maxbuildheight>
+	<splatt materials="wool" hide-progress-time="1m">
+		<time>5m</time>
+	</splatt>
+	<include src="splatt.xml"/>
+</map>
+
+
+
